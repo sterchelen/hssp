@@ -1,5 +1,5 @@
 .PHONY: build
-build: lint
+build:
 	go build
 
 .PHONY: install
