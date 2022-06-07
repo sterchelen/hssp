@@ -2,7 +2,7 @@
 hssp for Http StatuS where the two capitals S replace the two ts of `http`.
 
 ## Why?
-Anyway, this CLI is here to help you find/remember the meaning of an http status code.
+This CLI is here to help you find/remember the meaning of an http status code.
 
 Historically speaking, this tool was written after struggling with my memory to find the meaning of a code.
 Some tools already exist but installing Node.js is too much for me...
