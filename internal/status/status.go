@@ -65,8 +65,8 @@ func CodeClassFromName(name string) (int, bool) {
 	switch strings.ToLower(name) {
 	case "1xx", "informal":
 		return Informal, true
-	case "2xx", "successfull":
-		return Successfull, true
+	case "2xx", "successful":
+		return Successful, true
 	case "3xx", "redirection":
 		return Redirection, true
 	case "4xx", "clienterror", "client error":
