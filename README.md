@@ -38,11 +38,11 @@ Flags:
 #### Meaning of 204
 ```bash
 $ hssp code 204
-+------+-------------+-------------+---------+
-| CODE |    CLASS    | DESCRIPTION |   RFC   |
-+------+-------------+-------------+---------+
-|  204 | Successfull | No Content  | RFC7231 |
-+------+-------------+-------------+---------+
++------+------------+-------------+---------+
+| CODE |   CLASS    | DESCRIPTION |   RFC   |
++------+------------+-------------+---------+
+|  204 | Successful | No Content  | RFC7231 |
++------+------------+-------------+---------+
 ```
 
 ### Class
@@ -57,23 +57,23 @@ Usage:
 Flags:
   -h, --help   help for class
 ```
-#### List of status codes for the Successfull class
+#### List of status codes for the Successful class
 ```bash
 $ hssp class 2
-+------+-------------+-------------------------------+---------+
-| CODE |    CLASS    |          DESCRIPTION          |   RFC   |
-+------+-------------+-------------------------------+---------+
-|  200 | Successfull | OK                            | RFC7231 |
-|  201 | Successfull | Created                       | RFC7231 |
-|  202 | Successfull | Accepted                      | RFC7231 |
-|  203 | Successfull | Non-Authoritative Information | RFC7231 |
-|  204 | Successfull | No Content                    | RFC7231 |
-|  205 | Successfull | Reset Content                 | RFC7231 |
-|  206 | Successfull | Partial Content               | RFC7231 |
-|  207 | Successfull | Multi-Status                  | RFC4918 |
-|  208 | Successfull | Already Reported              | RFC5842 |
-|  226 | Successfull | IM Used                       | RFC3229 |
-+------+-------------+-------------------------------+---------+
++------+------------+-------------------------------+---------+
+| CODE |   CLASS    |          DESCRIPTION          |   RFC   |
++------+------------+-------------------------------+---------+
+|  200 | Successful | OK                            | RFC7231 |
+|  201 | Successful | Created                       | RFC7231 |
+|  202 | Successful | Accepted                      | RFC7231 |
+|  203 | Successful | Non-Authoritative Information | RFC7231 |
+|  204 | Successful | No Content                    | RFC7231 |
+|  205 | Successful | Reset Content                 | RFC7231 |
+|  206 | Successful | Partial Content               | RFC7231 |
+|  207 | Successful | Multi-Status                  | RFC4918 |
+|  208 | Successful | Already Reported              | RFC5842 |
+|  226 | Successful | IM Used                       | RFC3229 |
++------+------------+-------------------------------+---------+
 ```
 
 ## Contribution
