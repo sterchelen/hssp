@@ -39,9 +39,9 @@ Flags:
 ```bash
 $ hssp code 204
 +------+------------+-------------+---------+
-| CODE |    CLASS   | DESCRIPTION |   RFC   |
+| CODE |   CLASS    | DESCRIPTION |   RFC   |
 +------+------------+-------------+---------+
-|  204 | Successful | No Content  | RFC2616 |
+|  204 | Successful | No Content  | RFC7231 |
 +------+------------+-------------+---------+
 ```
 
@@ -60,20 +60,20 @@ Flags:
 #### List of status codes for the Successful class
 ```bash
 $ hssp class 2
-+------+-------------+-------------------------------+---------+
-| CODE |    CLASS    |          DESCRIPTION          |   RFC   |
-+------+-------------+-------------------------------+---------+
-|  200 | Successful | OK                            | RFC2616 |
-|  201 | Successful | Created                       | RFC2616 |
-|  202 | Successful | Accepted                      | RFC2616 |
-|  203 | Successful | Non-Authoritative Information | RFC2616 |
-|  204 | Successful | No Content                    | RFC2616 |
-|  205 | Successful | Reset Content                 | RFC2616 |
-|  206 | Successful | Partial Content               | RFC2616 |
++------+------------+-------------------------------+---------+
+| CODE |   CLASS    |          DESCRIPTION          |   RFC   |
++------+------------+-------------------------------+---------+
+|  200 | Successful | OK                            | RFC7231 |
+|  201 | Successful | Created                       | RFC7231 |
+|  202 | Successful | Accepted                      | RFC7231 |
+|  203 | Successful | Non-Authoritative Information | RFC7231 |
+|  204 | Successful | No Content                    | RFC7231 |
+|  205 | Successful | Reset Content                 | RFC7231 |
+|  206 | Successful | Partial Content               | RFC7231 |
 |  207 | Successful | Multi-Status                  | RFC4918 |
 |  208 | Successful | Already Reported              | RFC5842 |
 |  226 | Successful | IM Used                       | RFC3229 |
-+------+-------------+-------------------------------+---------+
++------+------------+-------------------------------+---------+
 ```
 
 ## Contribution
