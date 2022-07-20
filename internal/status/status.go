@@ -77,11 +77,15 @@ func CodeClassFromName(name string) (int, bool) {
 		return Redirection, true
 	case "4xx":
 		fallthrough
-	case "client Error":
+	case "clienterror":
+		fallthrough
+	case "client error":
 		return ClientError, true
 	case "5xx":
 		fallthrough
-	case "server Error":
+	case "servererror":
+		fallthrough
+	case "server error":
 		return ServerError, true
 	}
 
