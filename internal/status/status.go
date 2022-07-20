@@ -63,29 +63,15 @@ func (s Status) GiveClassName() string {
 
 func CodeClassFromName(name string) (int, bool) {
 	switch strings.ToLower(name) {
-	case "1xx":
-		fallthrough
-	case "informal":
+	case "1xx", "informal":
 		return Informal, true
-	case "2xx":
-		fallthrough
-	case "successfull":
+	case "2xx", "successfull":
 		return Successfull, true
-	case "3xx":
-		fallthrough
-	case "redirection":
+	case "3xx", "redirection":
 		return Redirection, true
-	case "4xx":
-		fallthrough
-	case "clienterror":
-		fallthrough
-	case "client error":
+	case "4xx", "clienterror", "client error":
 		return ClientError, true
-	case "5xx":
-		fallthrough
-	case "servererror":
-		fallthrough
-	case "server error":
+	case "5xx", "servererror", "server error":
 		return ServerError, true
 	}
 
