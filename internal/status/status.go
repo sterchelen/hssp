@@ -12,7 +12,7 @@ import (
 
 const (
 	Informal = iota + 1
-	Successfull
+	Successful
 	Redirection
 	ClientError
 	ServerError
@@ -47,8 +47,8 @@ func (s Status) GiveClassName() string {
 	switch s.class {
 	case Informal:
 		return "Informal"
-	case Successfull:
-		return "Successfull"
+	case Successful:
+		return "Successful"
 	case Redirection:
 		return "Redirection"
 	case ClientError:
