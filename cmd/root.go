@@ -34,7 +34,9 @@ with its corresponding class and its RFC.`,
 		Use:   "class",
 		Short: "Displays http codes corresponding to a given class",
 		Long: `This command displays the list of http status codes corresponding
-to the given class number (1,2,3,4,5).`,
+to the given class, which may be specified as a number (1-5),
+a class category string (1xx, 2xx, 3xx, 4xx, 5xx),
+or the class name, i.e. informational, successful, redirect, clienterror, or servererror`,
 		Args: cobra.MinimumNArgs(1),
 		RunE: classRun,
 	}
