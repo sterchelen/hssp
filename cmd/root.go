@@ -49,42 +49,57 @@ func Execute() error {
 
 func classRun(cmd *cobra.Command, args []string) error {
 	s, err := status.Initialize()
-	var tableData [][]string
-
-	class, err := strconv.Atoi(args[0])
 	if err != nil {
-		return fmt.Errorf("class: please, give a numerical value; %s", err)
+		return fmt.Errorf("class: Unable to initialize status due to: %s", err)
 	}
 
-	statuses, err := s.StatusesByClass(class)
-	if err != nil {
-		return err
+	for _, arg := range args {
+		var tableData [][]string
+		class, err := strconv.Atoi(arg)
+		if err != nil {
+			fmt.Printf("%s: Not a numeric code\n", arg)
+			continue
+		}
+
+		statuses, err := s.StatusesByClass(class)
+		if err != nil {
+			fmt.Printf("%s: No such class\n", arg)
+			continue
+		}
+
+		for _, status := range statuses {
+			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+				status.Description, status.RFCLink})
+		}
+		renderTable(tableData)
 	}
 
-	for _, status := range statuses {
-		tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
-			status.Description, status.RFCLink})
-	}
-	renderTable(tableData)
 	return nil
 }
 
 func codeRun(cmd *cobra.Command, args []string) error {
 	s, err := status.Initialize()
-	var tableData [][]string
-
-	code, err := strconv.Atoi(args[0])
 	if err != nil {
-		return fmt.Errorf("code: please, give a numerical value; %s", err)
+		return fmt.Errorf("code: Unable to initialize status due to: %s", err)
 	}
+	tableData := [][]string{}
 
-	sCode, err := s.FindStatusByCode(code)
-	if err != nil {
-		return err
-	}
+	for _, arg := range args {
+		code, err := strconv.Atoi(arg)
+		if err != nil {
+			fmt.Printf("%s: Not a numeric code\n", arg)
+			continue
+		}
 
-	tableData = [][]string{
-		[]string{strconv.Itoa(sCode.Code), sCode.GiveClassName(), sCode.Description, sCode.RFCLink},
+		sCode, err := s.FindStatusByCode(code)
+		if err != nil {
+			fmt.Printf("%s: No such code\n", arg)
+			continue
+		}
+
+		tableData = append(tableData,
+			[]string{strconv.Itoa(sCode.Code), sCode.GiveClassName(), sCode.Description, sCode.RFCLink},
+		)
 	}
 	renderTable(tableData)
 
