@@ -49,7 +49,9 @@ $ hssp code 204
 ```bash
 $ hssp class --help
 This command displays the list of http status codes corresponding
-to the given class number (1,2,3,4,5).
+to the given class, which may be specified as a number (1-5),
+a class category string (1xx, 2xx, 3xx, 4xx, 5xx),
+or the class name, i.e. informational, successful, redirect, clienterror, or servererror
 
 Usage:
   hssp class [flags]
