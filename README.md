@@ -38,11 +38,11 @@ Flags:
 #### Meaning of 204
 ```bash
 $ hssp code 204
-+------+-------------+-------------+---------+
-| CODE |    CLASS    | DESCRIPTION |   RFC   |
-+------+-------------+-------------+---------+
-|  204 | Successfull | No Content  | RFC2616 |
-+------+-------------+-------------+---------+
++------+------------+-------------+---------+
+| CODE |    CLASS   | DESCRIPTION |   RFC   |
++------+------------+-------------+---------+
+|  204 | Successful | No Content  | RFC2616 |
++------+------------+-------------+---------+
 ```
 
 ### Class
@@ -57,22 +57,22 @@ Usage:
 Flags:
   -h, --help   help for class
 ```
-#### List of status codes for the Successfull class
+#### List of status codes for the Successful class
 ```bash
 $ hssp class 2
 +------+-------------+-------------------------------+---------+
 | CODE |    CLASS    |          DESCRIPTION          |   RFC   |
 +------+-------------+-------------------------------+---------+
-|  200 | Successfull | OK                            | RFC2616 |
-|  201 | Successfull | Created                       | RFC2616 |
-|  202 | Successfull | Accepted                      | RFC2616 |
-|  203 | Successfull | Non-Authoritative Information | RFC2616 |
-|  204 | Successfull | No Content                    | RFC2616 |
-|  205 | Successfull | Reset Content                 | RFC2616 |
-|  206 | Successfull | Partial Content               | RFC2616 |
-|  207 | Successfull | Multi-Status                  | RFC4918 |
-|  208 | Successfull | Already Reported              | RFC5842 |
-|  226 | Successfull | IM Used                       | RFC3229 |
+|  200 | Successful | OK                            | RFC2616 |
+|  201 | Successful | Created                       | RFC2616 |
+|  202 | Successful | Accepted                      | RFC2616 |
+|  203 | Successful | Non-Authoritative Information | RFC2616 |
+|  204 | Successful | No Content                    | RFC2616 |
+|  205 | Successful | Reset Content                 | RFC2616 |
+|  206 | Successful | Partial Content               | RFC2616 |
+|  207 | Successful | Multi-Status                  | RFC4918 |
+|  208 | Successful | Already Reported              | RFC5842 |
+|  226 | Successful | IM Used                       | RFC3229 |
 +------+-------------+-------------------------------+---------+
 ```
 
