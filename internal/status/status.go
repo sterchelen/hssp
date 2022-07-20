@@ -69,8 +69,8 @@ func CodeClassFromName(name string) (int, bool) {
 		return Informal, true
 	case "2xx":
 		fallthrough
-	case "successfull":
-		return Successfull, true
+	case "successful":
+		return Successful, true
 	case "3xx":
 		fallthrough
 	case "redirection":
