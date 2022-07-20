@@ -1,7 +1,7 @@
 100,1,Continue,RFC7231
 101,1,Switching Protocols,RFC7231
 102,1,Processing,RFC2518
-103,1,Early Hints,RFC 8297
+103,1,Early Hints,RFC8297
 200,2,OK,RFC7231
 201,2,Created,RFC7231
 202,2,Accepted,RFC7231
