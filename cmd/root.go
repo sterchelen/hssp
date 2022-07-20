@@ -53,7 +53,10 @@ func classRun(cmd *cobra.Command, args []string) error {
 
 	class, err := strconv.Atoi(args[0])
 	if err != nil {
-		return fmt.Errorf("class: please, give a numerical value; %s", err)
+		ok := false
+		if class, ok = status.CodeClassFromName(args[0]); !ok {
+			return fmt.Errorf("class: please, give a numerical value; %s", err)
+		}
 	}
 
 	statuses, err := s.StatusesByClass(class)

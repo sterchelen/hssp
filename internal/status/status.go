@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"strings"
 
 	_ "embed"
 )
@@ -58,6 +59,33 @@ func (s Status) GiveClassName() string {
 	}
 
 	return "Unassigned"
+}
+
+func CodeClassFromName(name string) (int, bool) {
+	switch strings.ToLower(name) {
+	case "1xx":
+		fallthrough
+	case "informal":
+		return Informal, true
+	case "2xx":
+		fallthrough
+	case "successfull":
+		return Successfull, true
+	case "3xx":
+		fallthrough
+	case "redirection":
+		return Redirection, true
+	case "4xx":
+		fallthrough
+	case "client Error":
+		return ClientError, true
+	case "5xx":
+		fallthrough
+	case "server Error":
+		return ServerError, true
+	}
+
+	return 0, false
 }
 
 //StatusesByClass returns all the statuses fulfilling the given class condition
