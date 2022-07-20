@@ -41,7 +41,7 @@ $ hssp code 204
 +------+-------------+-------------+---------+
 | CODE |    CLASS    | DESCRIPTION |   RFC   |
 +------+-------------+-------------+---------+
-|  204 | Successfull | No Content  | RFC2616 |
+|  204 | Successfull | No Content  | RFC7231 |
 +------+-------------+-------------+---------+
 ```
 
@@ -63,13 +63,13 @@ $ hssp class 2
 +------+-------------+-------------------------------+---------+
 | CODE |    CLASS    |          DESCRIPTION          |   RFC   |
 +------+-------------+-------------------------------+---------+
-|  200 | Successfull | OK                            | RFC2616 |
-|  201 | Successfull | Created                       | RFC2616 |
-|  202 | Successfull | Accepted                      | RFC2616 |
-|  203 | Successfull | Non-Authoritative Information | RFC2616 |
-|  204 | Successfull | No Content                    | RFC2616 |
-|  205 | Successfull | Reset Content                 | RFC2616 |
-|  206 | Successfull | Partial Content               | RFC2616 |
+|  200 | Successfull | OK                            | RFC7231 |
+|  201 | Successfull | Created                       | RFC7231 |
+|  202 | Successfull | Accepted                      | RFC7231 |
+|  203 | Successfull | Non-Authoritative Information | RFC7231 |
+|  204 | Successfull | No Content                    | RFC7231 |
+|  205 | Successfull | Reset Content                 | RFC7231 |
+|  206 | Successfull | Partial Content               | RFC7231 |
 |  207 | Successfull | Multi-Status                  | RFC4918 |
 |  208 | Successfull | Already Reported              | RFC5842 |
 |  226 | Successfull | IM Used                       | RFC3229 |

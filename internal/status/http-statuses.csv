@@ -1,44 +1,44 @@
-100,1,Continue,RFC2616
-101,1,Switching Protocols,RFC2616
+100,1,Continue,RFC7231
+101,1,Switching Protocols,RFC7231
 102,1,Processing,RFC2518
 103,1,Early Hints,RFC 8297
-200,2,OK,RFC2616
-201,2,Created,RFC2616
-202,2,Accepted,RFC2616
-203,2,Non-Authoritative Information,RFC2616
-204,2,No Content,RFC2616
-205,2,Reset Content,RFC2616
-206,2,Partial Content,RFC2616
+200,2,OK,RFC7231
+201,2,Created,RFC7231
+202,2,Accepted,RFC7231
+203,2,Non-Authoritative Information,RFC7231
+204,2,No Content,RFC7231
+205,2,Reset Content,RFC7231
+206,2,Partial Content,RFC7231
 207,2,Multi-Status,RFC4918
 208,2,Already Reported,RFC5842
 226,2,IM Used,RFC3229
-300,3,Multiple Choices,RFC2616
-301,3,Moved Permanently,RFC2616
-302,3,Found,RFC2616
-303,3,See Other,RFC2616
-304,3,Not Modified,RFC2616
-305,3,Use Proxy,RFC2616
-306,3,Reserved,RFC2616
-307,3,Temporary Redirect,RFC2616
+300,3,Multiple Choices,RFC7231
+301,3,Moved Permanently,RFC7231
+302,3,Found,RFC7231
+303,3,See Other,RFC7231
+304,3,Not Modified,RFC7231
+305,3,Use Proxy,RFC7231
+306,3,Reserved,RFC7231
+307,3,Temporary Redirect,RFC7231
 308,3,Permanent Redirect,RFC-reschke-http-status-308-07
-400,4,Bad Request,RFC2616
-401,4,Unauthorized,RFC2616
-402,4,Payment Required,RFC2616
-403,4,Forbidden,RFC2616
-404,4,Not Found,RFC2616
-405,4,Method Not Allowed,RFC2616
-406,4,Not Acceptable,RFC2616
-407,4,Proxy Authentication Required,RFC2616
-408,4,Request Timeout,RFC2616
-409,4,Conflict,RFC2616
-410,4,Gone,RFC2616
-411,4,Length Required,RFC2616
-412,4,Precondition Failed,RFC2616
-413,4,Request Entity Too Large,RFC2616
-414,4,Request-URI Too Long,RFC2616
-415,4,Unsupported Media Type,RFC2616
-416,4,Requested Range Not Satisfiable,RFC2616
-417,4,Expectation Failed,RFC2616
+400,4,Bad Request,RFC7231
+401,4,Unauthorized,RFC7231
+402,4,Payment Required,RFC7231
+403,4,Forbidden,RFC7231
+404,4,Not Found,RFC7231
+405,4,Method Not Allowed,RFC7231
+406,4,Not Acceptable,RFC7231
+407,4,Proxy Authentication Required,RFC7231
+408,4,Request Timeout,RFC7231
+409,4,Conflict,RFC7231
+410,4,Gone,RFC7231
+411,4,Length Required,RFC7231
+412,4,Precondition Failed,RFC7231
+413,4,Request Entity Too Large,RFC7231
+414,4,Request-URI Too Long,RFC7231
+415,4,Unsupported Media Type,RFC7231
+416,4,Requested Range Not Satisfiable,RFC7231
+417,4,Expectation Failed,RFC7231
 418,4,I'm a teapot,RFC2324
 421,4,Misdirected Request,RFC7540
 422,4,Unprocessable Entity,RFC4918
@@ -50,12 +50,12 @@
 429,4,Too Many Requests,RFC6585
 431,4,Request Header Fields Too Large,RFC6585
 451,4,Unavailable For Legal Reasons,RFC7725
-500,5,Internal Server Error,RFC2616
-501,5,Not Implemented,RFC2616
-502,5,Bad Gateway,RFC2616
-503,5,Service Unavailable,RFC2616
-504,5,Gateway Timeout,RFC2616
-505,5,HTTP Version Not Supported,RFC2616
+500,5,Internal Server Error,RFC7231
+501,5,Not Implemented,RFC7231
+502,5,Bad Gateway,RFC7231
+503,5,Service Unavailable,RFC7231
+504,5,Gateway Timeout,RFC7231
+505,5,HTTP Version Not Supported,RFC7231
 506,5,Variant Also Negotiates (Experimental),RFC2295
 507,5,Insufficient Storage,RFC4918
 508,5,Loop Detected,RFC5842
