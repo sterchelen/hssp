@@ -22,21 +22,22 @@ var (
 	}
 
 	codeCmd = &cobra.Command{
-		Use:   "code",
+		Use:   "code CODE [CODE ...]",
 		Short: "Displays http code meaning",
-		Long: `This command displays the given http code description 
+		Long: `This command displays the description for the given http code
 with its corresponding class and its RFC.`,
 		Args: cobra.MinimumNArgs(1),
 		RunE: codeRun,
 	}
 
 	classCmd = &cobra.Command{
-		Use:   "class",
+		Use:   "class CLASS [CLASS ...]",
 		Short: "Displays http codes corresponding to a given class",
 		Long: `This command displays the list of http status codes corresponding
 to the given class, which may be specified as a number (1-5),
 a class category string (1xx, 2xx, 3xx, 4xx, 5xx),
-or the class name, i.e. informational, successful, redirect, clienterror, or servererror`,
+or the class name, i.e. informational, successful, redirect, clienterror,
+or servererror`,
 		Args: cobra.MinimumNArgs(1),
 		RunE: classRun,
 	}
