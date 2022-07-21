@@ -6,13 +6,14 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"strings"
 
 	_ "embed"
 )
 
 const (
 	Informal = iota + 1
-	Successfull
+	Successful
 	Redirection
 	ClientError
 	ServerError
@@ -47,8 +48,8 @@ func (s Status) GiveClassName() string {
 	switch s.class {
 	case Informal:
 		return "Informal"
-	case Successfull:
-		return "Successfull"
+	case Successful:
+		return "Successful"
 	case Redirection:
 		return "Redirection"
 	case ClientError:
@@ -58,6 +59,23 @@ func (s Status) GiveClassName() string {
 	}
 
 	return "Unassigned"
+}
+
+func CodeClassFromName(name string) (int, bool) {
+	switch strings.ToLower(name) {
+	case "1xx", "informal":
+		return Informal, true
+	case "2xx", "successful":
+		return Successful, true
+	case "3xx", "redirection":
+		return Redirection, true
+	case "4xx", "clienterror", "client error":
+		return ClientError, true
+	case "5xx", "servererror", "server error":
+		return ServerError, true
+	}
+
+	return 0, false
 }
 
 //StatusesByClass returns all the statuses fulfilling the given class condition
