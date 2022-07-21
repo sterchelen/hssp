@@ -61,8 +61,15 @@ func (s Status) GiveClassName() string {
 	return "Unassigned"
 }
 
-func CodeClassFromName(name string) (int, bool) {
-	switch strings.ToLower(name) {
+func CodeClassFromArg(arg string) (int, bool) {
+	if class, err := strconv.Atoi(arg); err == nil {
+		if class > 100 {
+			class /= 100
+		}
+		return class, true
+	}
+
+	switch strings.ToLower(arg) {
 	case "1xx", "informal":
 		return Informal, true
 	case "2xx", "successful":

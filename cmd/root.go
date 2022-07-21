@@ -57,12 +57,12 @@ func classRun(cmd *cobra.Command, args []string) error {
 	}
 
 	for _, arg := range args {
-		var tableData [][]string
-		class, err := strconv.Atoi(arg)
-		if err != nil {
-			fmt.Printf("%s: Not a numeric code\n", arg)
+		class, ok := status.CodeClassFromArg(arg)
+		if !ok {
+			fmt.Printf("%s: Not a known class or code\n", arg)
 			continue
 		}
+		var tableData [][]string
 
 		statuses, err := s.StatusesByClass(class)
 		if err != nil {
