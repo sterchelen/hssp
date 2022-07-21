@@ -55,7 +55,7 @@ or the class name, i.e. informational, successful, redirect, clienterror,
 or servererror
 
 Usage:
-  hssp class CLASS [CLASS ...] [flags]
+  hssp class [CLASS | CODE | NAME] [...] [flags]
 
 Flags:
   -h, --help   help for class

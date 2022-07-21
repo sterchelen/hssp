@@ -31,7 +31,7 @@ with its corresponding class and its RFC.`,
 	}
 
 	classCmd = &cobra.Command{
-		Use:   "class CLASS [CLASS ...]",
+		Use:   "class [CLASS | NAME | CODE] [...]",
 		Short: "Displays http codes corresponding to a given class",
 		Long: `This command displays the list of http status codes corresponding
 to the given class, which may be specified as a number (1-5),
