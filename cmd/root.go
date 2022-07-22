@@ -22,7 +22,7 @@ var (
 	}
 
 	codeCmd = &cobra.Command{
-		Use:   "code CODE [CODE ...]",
+		Use:   "code CODE [...]",
 		Short: "Displays http code meaning",
 		Long: `This command displays the description for the given http code
 with its corresponding class and its RFC.`,

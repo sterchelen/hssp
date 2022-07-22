@@ -30,7 +30,7 @@ This command displays the description for the given http code
 with its corresponding class and its RFC.
 
 Usage:
-  hssp code CODE [CODE ...] [flags]
+  hssp code CODE [...] [flags]
 
 Flags:
   -h, --help   help for code
