@@ -22,21 +22,22 @@ var (
 	}
 
 	codeCmd = &cobra.Command{
-		Use:   "code",
+		Use:   "code CODE [...]",
 		Short: "Displays http code meaning",
-		Long: `This command displays the given http code description 
+		Long: `This command displays the description for the given http code
 with its corresponding class and its RFC.`,
 		Args: cobra.MinimumNArgs(1),
 		RunE: codeRun,
 	}
 
 	classCmd = &cobra.Command{
-		Use:   "class",
+		Use:   "class [CLASS | NAME] [...]",
 		Short: "Displays http codes corresponding to a given class",
 		Long: `This command displays the list of http status codes corresponding
 to the given class, which may be specified as a number (1-5),
 a class category string (1xx, 2xx, 3xx, 4xx, 5xx),
-or the class name, i.e. informational, successful, redirect, clienterror, or servererror`,
+or the class name, i.e. informational, successful, redirect, clienterror,
+or servererror`,
 		Args: cobra.MinimumNArgs(1),
 		RunE: classRun,
 	}
@@ -51,46 +52,58 @@ func Execute() error {
 
 func classRun(cmd *cobra.Command, args []string) error {
 	s, err := status.Initialize()
-	var tableData [][]string
-
-	class, err := strconv.Atoi(args[0])
 	if err != nil {
-		ok := false
-		if class, ok = status.CodeClassFromName(args[0]); !ok {
-			return fmt.Errorf("class: please, give a numerical value; %s", err)
+		return fmt.Errorf("class: Unable to initialize status due to: %s", err)
+	}
+
+	for _, arg := range args {
+		class, ok := status.CodeClassFromArg(arg)
+		if !ok {
+			fmt.Printf("%s: Not a known class or code\n", arg)
+			continue
 		}
+		var tableData [][]string
+
+		statuses, err := s.StatusesByClass(class)
+		if err != nil {
+			fmt.Printf("%s: No such class\n", arg)
+			continue
+		}
+
+		for _, status := range statuses {
+			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+				status.Description, status.RFCLink})
+		}
+		renderTable(tableData)
 	}
 
-	statuses, err := s.StatusesByClass(class)
-	if err != nil {
-		return err
-	}
-
-	for _, status := range statuses {
-		tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
-			status.Description, status.RFCLink})
-	}
-	renderTable(tableData)
 	return nil
 }
 
 func codeRun(cmd *cobra.Command, args []string) error {
 	s, err := status.Initialize()
-	var tableData [][]string
-
-	code, err := strconv.Atoi(args[0])
 	if err != nil {
-		return fmt.Errorf("code: please, give a numerical value; %s", err)
+		return fmt.Errorf("code: Unable to initialize status due to: %s", err)
 	}
+	tableData := [][]string{}
 
-	statuses, err := s.FindStatusesByCode(code)
-	if err != nil {
-		return err
-	}
+	for _, arg := range args {
+		code, err := strconv.Atoi(arg)
+		if err != nil {
+			fmt.Printf("%s: Not a numeric code\n", arg)
+			continue
+		}
 
-	for _, status := range statuses {
-		tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
-			status.Description, status.RFCLink})
+		statuses, err := s.FindStatusesByCode(code)
+		if err != nil {
+			fmt.Printf("%s: No such code\n", arg)
+			continue
+		}
+
+		for _, status := range statuses {
+			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+				status.Description, status.RFCLink})
+		}
 	}
 	renderTable(tableData)
 
