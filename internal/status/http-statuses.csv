@@ -40,6 +40,9 @@
 416,4,Requested Range Not Satisfiable,RFC7231
 417,4,Expectation Failed,RFC7231
 418,4,I'm a teapot,RFC2324
+419,4,Page Expired,Laravel Framework
+420,4,Enhance your calm,Twitter
+420,4,Method Failure,Spring Framework
 421,4,Misdirected Request,RFC7540
 422,4,Unprocessable Entity,RFC4918
 423,4,Locked,RFC4918
@@ -48,8 +51,12 @@
 426,4,Upgrade Required,RFC2817
 428,4,Precondition Required,RFC6585
 429,4,Too Many Requests,RFC6585
+430,4,Request Header Fields Too Large,Shopify
 431,4,Request Header Fields Too Large,RFC6585
+450,4,Blocked by Windows Parental Controls,Microsoft
 451,4,Unavailable For Legal Reasons,RFC7725
+498,4,Invalid Token,Esri
+499,4,Token Required,Esri
 500,5,Internal Server Error,RFC7231
 501,5,Not Implemented,RFC7231
 502,5,Bad Gateway,RFC7231
@@ -59,5 +66,10 @@
 506,5,Variant Also Negotiates (Experimental),RFC2295
 507,5,Insufficient Storage,RFC4918
 508,5,Loop Detected,RFC5842
+509,5,Bandwidth Limit Exceeded,Apache Web Server/cPanel
 510,5,Not Extended,RFC2774
 511,5,Network Authentication Required,RFC6585
+529,5,Site is overloaded,Qualys
+530,5,Site is frozen,Pantheon
+598,5,Network Read Timeout Error,Unknown
+599,5,Network Connect Timeout Error,Unknown
