@@ -94,15 +94,16 @@ func codeRun(cmd *cobra.Command, args []string) error {
 			continue
 		}
 
-		sCode, err := s.FindStatusByCode(code)
+		statuses, err := s.FindStatusesByCode(code)
 		if err != nil {
 			fmt.Printf("%s: No such code\n", arg)
 			continue
 		}
 
-		tableData = append(tableData,
-			[]string{strconv.Itoa(sCode.Code), sCode.GiveClassName(), sCode.Description, sCode.RFCLink},
-		)
+		for _, status := range statuses {
+			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+				status.Description, status.RFCLink})
+		}
 	}
 	renderTable(tableData)
 
