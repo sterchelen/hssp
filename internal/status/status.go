@@ -63,9 +63,6 @@ func (s Status) GiveClassName() string {
 
 func CodeClassFromArg(arg string) (int, bool) {
 	if class, err := strconv.Atoi(arg); err == nil {
-		if class > 100 {
-			class /= 100
-		}
 		return class, true
 	}
 
