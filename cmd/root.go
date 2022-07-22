@@ -83,13 +83,14 @@ func codeRun(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("code: please, give a numerical value; %s", err)
 	}
 
-	sCode, err := s.FindStatusByCode(code)
+	statuses, err := s.FindStatusesByCode(code)
 	if err != nil {
 		return err
 	}
 
-	tableData = [][]string{
-		[]string{strconv.Itoa(sCode.Code), sCode.GiveClassName(), sCode.Description, sCode.RFCLink},
+	for _, status := range statuses {
+		tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+			status.Description, status.RFCLink})
 	}
 	renderTable(tableData)
 

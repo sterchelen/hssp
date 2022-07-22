@@ -94,12 +94,16 @@ func (s Statuses) StatusesByClass(class int) (Statuses, error) {
 	return codes, nil
 }
 
-//FindStatusByCode returns a status based on the given code
-func (s Statuses) FindStatusByCode(code int) (*Status, error) {
+//FindStatusByCode returns a list of statuses based on the given code
+func (s Statuses) FindStatusesByCode(code int) (Statuses, error) {
+	var statuses Statuses
 	for _, status := range s {
 		if status.Code == code {
-			return status, nil
+			statuses = append(statuses, status)
 		}
+	}
+	if len(statuses) > 0 {
+		return statuses, nil
 	}
 	return nil, fmt.Errorf("Code undefined")
 }
