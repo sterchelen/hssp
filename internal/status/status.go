@@ -130,16 +130,12 @@ func fillStatuses() (Statuses, error) {
 		if err != nil {
 			return nil, fmt.Errorf("csv: %w", err)
 		}
-		class, err := strconv.Atoi(line[1])
-		if err != nil {
-			return nil, fmt.Errorf("csv: %w", err)
-		}
 
 		s := &Status{
 			Code:        code,
-			class:       class,
-			Description: line[2],
-			RFCLink:     line[3],
+			class:       code / 100,
+			Description: line[1],
+			RFCLink:     line[2],
 		}
 		statuses = append(statuses, s)
 	}

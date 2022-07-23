@@ -1,75 +1,75 @@
-100,1,Continue,RFC7231
-101,1,Switching Protocols,RFC7231
-102,1,Processing,RFC2518
-103,1,Early Hints,RFC8297
-200,2,OK,RFC7231
-201,2,Created,RFC7231
-202,2,Accepted,RFC7231
-203,2,Non-Authoritative Information,RFC7231
-204,2,No Content,RFC7231
-205,2,Reset Content,RFC7231
-206,2,Partial Content,RFC7231
-207,2,Multi-Status,RFC4918
-208,2,Already Reported,RFC5842
-226,2,IM Used,RFC3229
-300,3,Multiple Choices,RFC7231
-301,3,Moved Permanently,RFC7231
-302,3,Found,RFC7231
-303,3,See Other,RFC7231
-304,3,Not Modified,RFC7231
-305,3,Use Proxy,RFC7231
-306,3,Reserved,RFC7231
-307,3,Temporary Redirect,RFC7231
-308,3,Permanent Redirect,RFC-reschke-http-status-308-07
-400,4,Bad Request,RFC7231
-401,4,Unauthorized,RFC7231
-402,4,Payment Required,RFC7231
-403,4,Forbidden,RFC7231
-404,4,Not Found,RFC7231
-405,4,Method Not Allowed,RFC7231
-406,4,Not Acceptable,RFC7231
-407,4,Proxy Authentication Required,RFC7231
-408,4,Request Timeout,RFC7231
-409,4,Conflict,RFC7231
-410,4,Gone,RFC7231
-411,4,Length Required,RFC7231
-412,4,Precondition Failed,RFC7231
-413,4,Request Entity Too Large,RFC7231
-414,4,Request-URI Too Long,RFC7231
-415,4,Unsupported Media Type,RFC7231
-416,4,Requested Range Not Satisfiable,RFC7231
-417,4,Expectation Failed,RFC7231
-418,4,I'm a teapot,RFC2324
-419,4,Page Expired,Laravel Framework
-420,4,Enhance your calm,Twitter
-420,4,Method Failure,Spring Framework
-421,4,Misdirected Request,RFC7540
-422,4,Unprocessable Entity,RFC4918
-423,4,Locked,RFC4918
-424,4,Failed Dependency,RFC4918
-425,4,Too Early,RFC8470
-426,4,Upgrade Required,RFC2817
-428,4,Precondition Required,RFC6585
-429,4,Too Many Requests,RFC6585
-430,4,Request Header Fields Too Large,Shopify
-431,4,Request Header Fields Too Large,RFC6585
-450,4,Blocked by Windows Parental Controls,Microsoft
-451,4,Unavailable For Legal Reasons,RFC7725
-498,4,Invalid Token,Esri
-499,4,Token Required,Esri
-500,5,Internal Server Error,RFC7231
-501,5,Not Implemented,RFC7231
-502,5,Bad Gateway,RFC7231
-503,5,Service Unavailable,RFC7231
-504,5,Gateway Timeout,RFC7231
-505,5,HTTP Version Not Supported,RFC7231
-506,5,Variant Also Negotiates (Experimental),RFC2295
-507,5,Insufficient Storage,RFC4918
-508,5,Loop Detected,RFC5842
-509,5,Bandwidth Limit Exceeded,Apache Web Server/cPanel
-510,5,Not Extended,RFC2774
-511,5,Network Authentication Required,RFC6585
-529,5,Site is overloaded,Qualys
-530,5,Site is frozen,Pantheon
-598,5,Network Read Timeout Error,Unknown
-599,5,Network Connect Timeout Error,Unknown
+100,Continue,RFC7231
+101,Switching Protocols,RFC7231
+102,Processing,RFC2518
+103,Early Hints,RFC8297
+200,OK,RFC7231
+201,Created,RFC7231
+202,Accepted,RFC7231
+203,Non-Authoritative Information,RFC7231
+204,No Content,RFC7231
+205,Reset Content,RFC7231
+206,Partial Content,RFC7231
+207,Multi-Status,RFC4918
+208,Already Reported,RFC5842
+226,IM Used,RFC3229
+300,Multiple Choices,RFC7231
+301,Moved Permanently,RFC7231
+302,Found,RFC7231
+303,See Other,RFC7231
+304,Not Modified,RFC7231
+305,Use Proxy,RFC7231
+306,Reserved,RFC7231
+307,Temporary Redirect,RFC7231
+308,Permanent Redirect,RFC-reschke-http-status-308-07
+400,Bad Request,RFC7231
+401,Unauthorized,RFC7231
+402,Payment Required,RFC7231
+403,Forbidden,RFC7231
+404,Not Found,RFC7231
+405,Method Not Allowed,RFC7231
+406,Not Acceptable,RFC7231
+407,Proxy Authentication Required,RFC7231
+408,Request Timeout,RFC7231
+409,Conflict,RFC7231
+410,Gone,RFC7231
+411,Length Required,RFC7231
+412,Precondition Failed,RFC7231
+413,Request Entity Too Large,RFC7231
+414,Request-URI Too Long,RFC7231
+415,Unsupported Media Type,RFC7231
+416,Requested Range Not Satisfiable,RFC7231
+417,Expectation Failed,RFC7231
+418,I'm a teapot,RFC2324
+419,Page Expired,Laravel Framework
+420,Enhance your calm,Twitter
+420,Method Failure,Spring Framework
+421,Misdirected Request,RFC7540
+422,Unprocessable Entity,RFC4918
+423,Locked,RFC4918
+424,Failed Dependency,RFC4918
+425,Too Early,RFC8470
+426,Upgrade Required,RFC2817
+428,Precondition Required,RFC6585
+429,Too Many Requests,RFC6585
+430,Request Header Fields Too Large,Shopify
+431,Request Header Fields Too Large,RFC6585
+450,Blocked by Windows Parental Controls,Microsoft
+451,Unavailable For Legal Reasons,RFC7725
+498,Invalid Token,Esri
+499,Token Required,Esri
+500,Internal Server Error,RFC7231
+501,Not Implemented,RFC7231
+502,Bad Gateway,RFC7231
+503,Service Unavailable,RFC7231
+504,Gateway Timeout,RFC7231
+505,HTTP Version Not Supported,RFC7231
+506,Variant Also Negotiates (Experimental),RFC2295
+507,Insufficient Storage,RFC4918
+508,Loop Detected,RFC5842
+509,Bandwidth Limit Exceeded,Apache Web Server/cPanel
+510,Not Extended,RFC2774
+511,Network Authentication Required,RFC6585
+529,Site is overloaded,Qualys
+530,Site is frozen,Pantheon
+598,Network Read Timeout Error,Unknown
+599,Network Connect Timeout Error,Unknown
