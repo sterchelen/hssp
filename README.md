@@ -26,11 +26,11 @@ make install
 ### Code
 ```bash
 $ hssp code --help
-This command displays the given http code description 
+This command displays the description for the given http code
 with its corresponding class and its RFC.
 
 Usage:
-  hssp code [flags]
+  hssp code CODE [...] [flags]
 
 Flags:
   -h, --help   help for code
@@ -51,10 +51,11 @@ $ hssp class --help
 This command displays the list of http status codes corresponding
 to the given class, which may be specified as a number (1-5),
 a class category string (1xx, 2xx, 3xx, 4xx, 5xx),
-or the class name, i.e. informational, successful, redirect, clienterror, or servererror
+or the class name, i.e. informational, successful, redirect, clienterror,
+or servererror
 
 Usage:
-  hssp class [flags]
+  hssp class [CLASS | NAME] [...] [flags]
 
 Flags:
   -h, --help   help for class
