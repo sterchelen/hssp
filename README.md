@@ -1,4 +1,7 @@
 # hssp
+
+[![justforfunnoreally.dev badge](https://img.shields.io/badge/justforfunnoreally-dev-9ff)](https://justforfunnoreally.dev)
+
 hssp for Http StatuS where the two capitals S replace the two ts of `http`.
 
 ## Why?
