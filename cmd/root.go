@@ -14,6 +14,9 @@ const (
 	appName = "hssp"
 )
 
+// print rfc flag
+var print bool
+
 var (
 	rootCmd = &cobra.Command{
 		Use:   appName,
@@ -43,6 +46,9 @@ or servererror`,
 	}
 )
 
+func init() {
+	codeCmd.Flags().BoolVar(&print, "print", false, "Prints respective rfc")
+}
 func Execute() error {
 	rootCmd.AddCommand(codeCmd)
 	rootCmd.AddCommand(classCmd)
