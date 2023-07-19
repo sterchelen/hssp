@@ -2,8 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
+	"net/http"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
@@ -47,7 +50,7 @@ or servererror`,
 )
 
 func init() {
-	codeCmd.Flags().BoolVar(&print, "print", false, "Prints respective rfc")
+	codeCmd.PersistentFlags().BoolVar(&print, "print", false, "Prints respective rfc")
 }
 func Execute() error {
 	rootCmd.AddCommand(codeCmd)
@@ -93,6 +96,11 @@ func codeRun(cmd *cobra.Command, args []string) error {
 	}
 	tableData := [][]string{}
 
+	var statuses status.Statuses
+
+	// Check for existence of --print flag
+	bePrint, _ := cmd.Flags().GetBool("print")
+
 	for _, arg := range args {
 		code, err := strconv.Atoi(arg)
 		if err != nil {
@@ -100,7 +108,7 @@ func codeRun(cmd *cobra.Command, args []string) error {
 			continue
 		}
 
-		statuses, err := s.FindStatusesByCode(code)
+		statuses, err = s.FindStatusesByCode(code)
 		if err != nil {
 			fmt.Printf("%s: No such code\n", arg)
 			continue
@@ -109,8 +117,20 @@ func codeRun(cmd *cobra.Command, args []string) error {
 		for _, status := range statuses {
 			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
 				status.Description, status.RFCLink})
+
+			// Ok now we should get rfc and print it
+			if bePrint {
+				rfcTxt, err := getRFCText(status.RFCLink)
+				if err != nil {
+					fmt.Printf("%s: Error occurred during fetching rfc for print", appName)
+					continue
+				}
+				fmt.Println(rfcTxt)
+			}
 		}
+
 	}
+	fmt.Println("-----------------------------------------------------------------------")
 	renderTable(tableData)
 
 	return nil
@@ -126,4 +146,20 @@ func renderTable(tableData [][]string) {
 		}
 		table.Render()
 	}
+}
+
+func getRFCText(rfccode string) (string, error) {
+	// rfccode is something like "rfc7231"
+
+	url := fmt.Sprintf("https://www.rfc-editor.org/rfc/%s.txt", strings.ToLower(rfccode))
+	res, err := http.Get(url)
+	if err != nil {
+		return "", err
+	}
+	rfcBytes, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return "", err
+	}
+	rfcTxt := string(rfcBytes)
+	return rfcTxt, nil
 }
