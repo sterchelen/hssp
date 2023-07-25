@@ -50,7 +50,7 @@ or servererror`,
 )
 
 func init() {
-	codeCmd.PersistentFlags().BoolVar(&print, "print", false, "Prints respective rfc")
+	codeCmd.PersistentFlags().Bool("print", false, "Prints respective rfc")
 }
 func Execute() error {
 	rootCmd.AddCommand(codeCmd)
