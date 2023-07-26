@@ -94,12 +94,16 @@ func codeRun(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("code: Unable to initialize status due to: %s", err)
 	}
+
+	// This variable will be used if `--print` be false (if it doesn't exist)
 	tableData := [][]string{}
 
-	var statuses status.Statuses
+	// A dictionary of rfcs (key: rfc link, value rfc text)
+	// This variable will be use if `--print` be true (if it does exist)
+	var rfcs = make(map[string]string)
 
 	// Check for existence of --print flag
-	bePrint, _ := cmd.Flags().GetBool("print")
+	printRFC, _ := cmd.Flags().GetBool("print")
 
 	for _, arg := range args {
 		code, err := strconv.Atoi(arg)
@@ -108,6 +112,7 @@ func codeRun(cmd *cobra.Command, args []string) error {
 			continue
 		}
 
+		var statuses status.Statuses
 		statuses, err = s.FindStatusesByCode(code)
 		if err != nil {
 			fmt.Printf("%s: No such code\n", arg)
@@ -115,23 +120,40 @@ func codeRun(cmd *cobra.Command, args []string) error {
 		}
 
 		for _, status := range statuses {
-			tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
-				status.Description, status.RFCLink})
-
-			// Ok now we should get rfc and print it
-			if bePrint {
+			if printRFC {
 				rfcTxt, err := getRFCText(status.RFCLink)
 				if err != nil {
 					fmt.Printf("%s: Error occurred during fetching rfc for print", appName)
 					continue
 				}
-				fmt.Println(rfcTxt)
+				rfcs[status.RFCLink] = rfcTxt
+			} else {
+				tableData = append(tableData, []string{strconv.Itoa(status.Code), status.GiveClassName(),
+					status.Description, status.RFCLink})
 			}
 		}
 
 	}
-	fmt.Println("-----------------------------------------------------------------------")
-	renderTable(tableData)
+
+	// Ok now we should print rfc or table
+	if printRFC {
+		// Print rfcs
+
+		count := 0
+		rfcsLen := len(rfcs)
+		for _, rfcTxt := range rfcs {
+			fmt.Println(rfcTxt)
+
+			count += 1
+
+			// If it's the last rfc we don't need to print `-` character to seperate next current rfc from next rfc (there isn't next one)
+			if count != rfcsLen {
+				fmt.Println("----------------------------------------------------------------------")
+			}
+		}
+	} else {
+		renderTable(tableData)
+	}
 
 	return nil
 }
