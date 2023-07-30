@@ -134,17 +134,10 @@ func codeRun(cmd *cobra.Command, args []string) error {
 		}
 
 	}
-
-	// Ok now we should print rfc or table
 	if printRFC {
-		// Print rfcs
-
 		rfcsLen := len(rfcs)
 		for count, rfcTxt := range rfcs {
 			fmt.Println(rfcTxt)
-
-
-			// If it's the last rfc we don't need to print `-` character to seperate next current rfc from next rfc (there isn't next one)
 			if count != rfcsLen {
 				fmt.Println("----------------------------------------------------------------------")
 			}
