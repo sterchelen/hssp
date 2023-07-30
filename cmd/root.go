@@ -139,7 +139,6 @@ func codeRun(cmd *cobra.Command, args []string) error {
 	if printRFC {
 		// Print rfcs
 
-		count := 0
 		rfcsLen := len(rfcs)
 		for count, rfcTxt := range rfcs {
 			fmt.Println(rfcTxt)
