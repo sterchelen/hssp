@@ -123,7 +123,7 @@ func codeRun(cmd *cobra.Command, args []string) error {
 			if printRFC {
 				rfcTxt, err := getRFCText(status.RFCLink)
 				if err != nil {
-					fmt.Printf("%s: Error occurred during fetching rfc for print", appName)
+					fmt.Printf("%s: Error occurred while fetching rfc for print", appName)
 					continue
 				}
 				rfcs[status.RFCLink] = rfcTxt
